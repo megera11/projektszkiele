@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_uzytkownika: 1
+  wzrost: 1
+  waga: 9.99
+  bmi: 9.99
+  kcaldospoz: 1
+
+two:
+  id_uzytkownika: 1
+  wzrost: 1
+  waga: 9.99
+  bmi: 9.99
+  kcaldospoz: 1

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nazwa: MyString
+  kalorie: 9.99
+  bialko: 9.99
+  weglowodany: 9.99
+  tluszcz: 9.99
+  blonnik: 9.99
+
+two:
+  nazwa: MyString
+  kalorie: 9.99
+  bialko: 9.99
+  weglowodany: 9.99
+  tluszcz: 9.99
+  blonnik: 9.99

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="bigdiv">
+    <div id="logo" >
+      Pokarmies
+    </div>
+    <div id="columns" >
+      <div id="menu" >
+          <p><i><%= link_to "Strona glowna", powitanie_path  %></i></p>
+          <p><i><%= link_to "Historia", pokarm_path %></i></p>
+          <p><i><%= link_to "Zarzadznie kontem", edycja_path %></i></p>
+          <p><i><%= link_to "Dodaj nowy pokarm", spispokarmow_path %></i></p>
+          <p><i><%= link_to "Wyloguj", home_path %></i></p>
+      </div>
+      <div id="content" >
+        <%= yield %>
+      </div>
+    </div>
+    <div id="stopka">
+   to stopka
+    </div>
+    </div>
+  </body>
+</html>
