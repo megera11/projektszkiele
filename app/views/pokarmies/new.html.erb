@@ -1,0 +1,31 @@
+siema
+<%= form_with scope: :pokarmy, url: pokarmies_path, local: true do |form| %>
+  <p>
+    <%= form.label :Nazwa %><br>
+    <%= form.text_field :nazwa %>
+  </p>
+
+  <p>
+    <%= form.label :Kalorie %><br>
+    <%= form.text_field :kalorie %>
+  </p>
+
+  <p>
+    <%= form.label :Bialko %><br>
+    <%= form.text_field :bialko %>
+  </p>
+
+  <p>
+    <%= form.label :Weglowodany %><br>
+    <%= form.text_field :weglowodany %>
+  </p>
+
+  <p>
+    <%= form.label :Tluszcz %><br>
+    <%= form.text_field :tluszcz %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>

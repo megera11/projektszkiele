@@ -1,0 +1,18 @@
+<br><h1>spis pokarmow</h1>
+<table>
+  <tr>
+    <th>Nazwa</th>
+    <th>kalorie</th>
+    <th></th>
+  </tr>
+
+  <% @pokarmies.each do |pokarmy| %>
+    <tr>
+      <td><%= pokarmy.nazwa %></td>
+      <td><%= pokarmy.kalorie %></td>
+      <td><%= link_to 'Show', pokarmy_path(pokarmy) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><i><%= link_to "Dodaj nowy pokarm do bazy", new_pokarmy_path  %></i></p>

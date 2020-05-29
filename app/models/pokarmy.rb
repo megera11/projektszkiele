@@ -1,3 +1,3 @@
 class Pokarmy < ApplicationRecord
-  belongs_to :eat
+  belongs_to :eat, required: false
 end

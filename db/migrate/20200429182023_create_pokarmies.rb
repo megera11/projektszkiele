@@ -9,7 +9,7 @@ class CreatePokarmies < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    add_index :pokarmies, :nazwa, unique: true
+    
   end
 
 

@@ -13,3 +13,4 @@
     Pokarmy.create(nazwa: "jajko9", kalorie: 123.0, bialko: 12.5, weglowodany: 0.6, tluszcz: 9.7)
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
