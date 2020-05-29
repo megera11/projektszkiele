@@ -15,6 +15,8 @@
     </div>
     <div id="columns" >
       <div id="menu" >
+          <p><h3> Zalogowano jako:<br>
+          <%= current_user.name %> </h3></p>
           <p><i><%= link_to "Strona glowna", powitanie_path  %></i></p>
           <p><i><%= link_to "Historia", pokarm_path %></i></p>
           <p><i><%= link_to "Zarzadznie kontem", edycja_path %></i></p>
@@ -22,6 +24,7 @@
           <p><i><%= link_to "Wyloguj", logout_sessions_path %></i></p>
       </div>
       <div id="content" >
+
         <%= yield %>
       </div>
     </div>

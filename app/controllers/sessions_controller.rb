@@ -8,17 +8,17 @@ class SessionsController < ApplicationController
     end
     if authorized_user
       session[:user_id] = authorized_user.id
-      flash[:success] = "You are now loged in."
+      flash[:success1] = "You are now loged in."
       redirect_to powitanie_path
     else
-      flash[:error] = "Invalid username or password."
+      flash[:error1] = "Invalid username or password."
       redirect_to home_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "Logged out."
+    flash[:success2] = "Logged out."
     redirect_to home_path
   end
 

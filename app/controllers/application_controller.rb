@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
  def current_user
    User.find_by id: session[:user_id] if session[:user_id]
  end
+
+ def authorize
+    flash[:wylog] = "Nie jestes zalogowany."
+    redirect_to home_path unless current_user
+ end
+
 end

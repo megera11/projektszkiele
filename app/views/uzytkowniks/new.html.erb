@@ -1,0 +1,20 @@
+<%= form_for(@uzytkownik) do |f| %>
+  <table>
+    <tr>
+        <td><%= f.label :Wzrost %></td>
+        <td><%= f.text_field :wzrost %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Waga %></td>
+      <td><%= f.text_field :waga %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Kcal%></td>
+      <td><%= f.text_field :kcaldospoz %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit("cos") %></td>
+    </tr>
+  </table>
+<% end %>

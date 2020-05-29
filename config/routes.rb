@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'powitanie' => 'welcome#index', as: 'powitanie'
   get 'pokarm' => 'eat#index', as: 'pokarm'
-  get 'edycja' => 'uzytkownik#index', as: 'edycja'
+  get 'edycja' => 'uzytkowniks#new', as: 'edycja'
   get 'rejestracja' => 'users#new', as: 'rejestracja'
   get '/rejestracja', to: 'public#home'
   resources :pokarmies
@@ -17,4 +17,5 @@ Rails.application.routes.draw do
       get 'logout' => 'sessions#destroy'
     end
   end
+  resources :uzytkowniks, only: [:create, :update, :new]
 end

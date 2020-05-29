@@ -1,4 +1,5 @@
 class PokarmiesController < ApplicationController
+  before_action :authorize
   def index
     @pokarmies = Pokarmy.all
   end
@@ -13,10 +14,16 @@ class PokarmiesController < ApplicationController
 
   def create
     @pokarmy = Pokarmy.new(params[:pokarmy].permit(:nazwa, :kalorie, :bialko, :weglowodany, :tluszcz))
-  #  render plain: params[:pokarmy].inspect
+    if @pokarmy.save
+      flash[:success] = "Registration successful."
+      redirect_to spispokarmow_path
+    else
+      flash[:error] = "Registration failed."
+      render 'new'
+    end
 
-    @pokarmy.save
-    redirect_to @pokarmy
+
+
   end
 
 

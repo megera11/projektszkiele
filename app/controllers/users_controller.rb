@@ -7,11 +7,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @uzytkownik = Uzytkownik.create(user: @user)
       flash[:success] = "Registration successful."
       redirect_to home_path
     else
       flash[:error] = "Registration failed."
-      render 'new'
+      redirect_to home_path
     end
   end
 
