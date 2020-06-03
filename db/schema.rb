@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_150640) do
+ActiveRecord::Schema.define(version: 2020_05_29_132542) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_150640) do
   end
 
   create_table "uzytkowniks", force: :cascade do |t|
-    t.integer "id_uzytkownika"
+    t.integer "user_id"
     t.integer "wzrost"
     t.decimal "waga", precision: 4, scale: 1
     t.decimal "bmi", precision: 3, scale: 1
