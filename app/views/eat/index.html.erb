@@ -2,6 +2,12 @@
 <div id=lewo>
   <h3>Historia </h3>
   <p>Historia wybranego dnia</p>
+  <% @lista.each do |f| %>
+    <tr>
+      <td><%= f.pokarmy.nazwa %></td>
+    </tr>
+  <% end %>
+  <p><i><%= link_to "Dodaj nowy pokarm do bazy", new_eat_path  %></i></p>
 </div>
 
 <div id=prawo>

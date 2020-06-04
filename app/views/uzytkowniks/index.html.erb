@@ -1,3 +1,7 @@
 <p><%= @uzytkownik.wzrost %></p>
 <p><%= @uzytkownik.waga %></p>
-<p><%= link_to 'edit', edit_uzytkownik_path(@uzytkownik) %></p>
+<p><%= @uzytkownik.bmi %></p>
+<p><%= @uzytkownik.prop_kcal %></p>
+<p><%= @prop_kcal %></p>
+
+<p><%= link_to 'Edycja danych', edit_uzytkownik_path(@uzytkownik) %></p>

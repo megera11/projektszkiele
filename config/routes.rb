@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/rejestracja', to: 'public#home'
   resources :uzytkowniks
   resources :pokarmies
+  resources :eats
   resources :users, only: [:new, :create]
   get 'spispokarmow' => 'pokarmies#index', as: 'spispokarmow'
   resources :sessions, only: [:create] do

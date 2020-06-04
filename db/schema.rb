@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_132542) do
+ActiveRecord::Schema.define(version: 2020_06_04_094945) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2020_05_29_132542) do
   end
 
   create_table "eats", force: :cascade do |t|
-    t.integer "id_uzytkownika"
+    t.integer "user_id"
     t.date "data"
-    t.integer "id_pokarmu"
+    t.integer "pokarmy_id"
     t.integer "ilosc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -75,6 +75,9 @@ ActiveRecord::Schema.define(version: 2020_05_29_132542) do
     t.integer "kcaldospoz"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "plec"
+    t.integer "rok_urodzenia"
+    t.integer "prop_kcal"
   end
 
 end

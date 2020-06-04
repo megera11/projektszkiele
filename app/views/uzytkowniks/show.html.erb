@@ -1,3 +1,4 @@
 <p><%= @uzytkownik.wzrost %></p>
 <p><%= @uzytkownik.waga %></p>
+<p><%= @uzytkownik.waga/(@uzytkownik.wzrost*@uzytkownik.wzrost )%></p>
 <p><%= button_to 'edit', edit_uzytkownik_path(@uzytkownik) %></p>

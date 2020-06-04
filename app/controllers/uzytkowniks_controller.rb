@@ -1,8 +1,13 @@
 class UzytkowniksController < ApplicationController
   before_action :authorize
-
+  helper_method :k
   def index
     @uzytkownik = Uzytkownik.find_by(user_id: current_user)
+  #  @prop_kcal = Uzytkownik.k(params[:plec])
+  end
+
+  def prop
+
   end
 
   def show
@@ -19,7 +24,6 @@ class UzytkowniksController < ApplicationController
 
   def create
     @uzytkownik = Uzytkownik.new(uzytkownik_params)
-
     if @uzytkownik.save
       redirect_to @uzytkownik
     else
@@ -29,7 +33,6 @@ class UzytkowniksController < ApplicationController
 
   def update
     @uzytkownik =Uzytkownik.find_by(user_id: current_user)
-
     if @uzytkownik.update(uzytkownik_params)
       redirect_to edycja_path
     else
@@ -39,6 +42,6 @@ class UzytkowniksController < ApplicationController
 
   private
     def uzytkownik_params
-      params.require(:uzytkownik).permit(:wzrost, :waga, :kcaldospoz)
+      params.require(:uzytkownik).permit(:wzrost, :waga, :kcaldospoz, :bmi, :rok_urodzenia, :plec)
     end
 end
