@@ -7,7 +7,7 @@ class EatsController < ApplicationController
     @cos= true
     @lista = Eat.where(user_id: current_user)
     #if @cos==false
-    @data=params[:date][:day]
+    #@data=params[:date][:day]
     #end
   end
 
