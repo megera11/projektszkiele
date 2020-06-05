@@ -4,11 +4,11 @@ class CreateUzytkowniks < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :wzrost
       t.decimal :waga, precision: 4, scale: 1
-      t.decimal :bmi, precision: 3, scale: 1
-      t.integer :kcaldospoz
+      t.decimal :bmi, precision: 10, scale: 1
+      t.decimal :kcaldospoz, precision: 10, scale: 1
       t.string :plec
       t.integer :rok_urodzenia
-      t.integer :prop_kcal
+      t.decimal :prop_kcal, precision: 10, scale: 1
 
       t.timestamps
     end
