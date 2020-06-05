@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/application.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
         <% end %>
     </div>
     <div class = "row">
-    <div class="col-2 py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" >
+    <div class="col-2 py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" id="aside" >
       <p><h4><center>Zalogowano jako:<br>
       <%= current_user.name %> </center></h3></h4><br>
       <center><p><i><%= link_to "Strona glowna", powitanie_path, class: "btn btn-dark", style: "width:200px;"  %></i></p>
@@ -37,7 +37,7 @@
       <p><i><%= link_to "Dodaj nowy pokarm", spispokarmow_path, class: "btn btn-dark", style: "width:200px;" %></i></p>
       <p><i><%= link_to "Wyloguj", logout_sessions_path, class: "btn btn-dark", style: "width:200px;" %></i></p></center>
       </div>
-      <div class="col py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" style = "height:37em;">
+      <div class="col py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" style = "height:37em;" id="main">
         <%= yield =%>
       </div>
     </div>
