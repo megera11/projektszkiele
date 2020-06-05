@@ -1,132 +1,19 @@
-class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
-end
 
-
-class Eat < ApplicationRecord
-  belongs_to :user
-  has_many :pokarmy
-end
-
-class Pokarmy < ApplicationRecord
-  belongs_to :eat
-end
-
-class User < ActiveRecord::Base
-  has_one :uzytkownik
-  has_many :eat
-  before_save {self.email = email.downcase}
-  validates :name, presence: true, length: {maximum: 20}
-    validates :email, presence: true, length: {maximum: 255},
-                    uniqueness: {case_sensitive: false}
-  has_secure_password
-  validates :password, presence: true
-end
-
-class Uzytkownik < ApplicationRecord
-  belongs_to :user
-end
------------
-class TabelaPokarmyController < ApplicationController
-  def index
-     @pokarmies = Pokarmy.all
-  end
-
-  def show
-    @pokarmy = Pokarmy.find(params[:id])
-  end
-
-
-  def new
-
-  end
-end
-
-
-<table>
-  <tr>
-    <th>Nazwa</th>
-    <th>Kalorie</th>
-    <th></th>
-  </tr>
-
-  <% Pokarmy.all.each do |pokarmy| %>
+<div id=lewo>
+  <h3>Historia </h3>
+  <p>Historia wybranego dnia</p>
+  <% @lista.each do |f| %>
     <tr>
-      <td><%= pokarmy[:nazwa] %></td>
-      <td><%= pokarmy[:kalorie] %></td>
+      <td><%= f.pokarmy.nazwa %></td>
     </tr>
   <% end %>
+  <p><i><%= link_to "Dodaj nowy pokarm do bazy", new_eat_path  %></i></p>
+</div>
 
+<div id=prawo>
+<h3> Dodaj pokarm</h3>
 
-</table>
+<p> tu uzytkownik dodaje zjedzone pozywienie</p>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @pokarmy.nazwa %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @pokarmy.kalorie %>
-</p>
-
-
-
-#stopka{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 5%;
-  border-top: 2px solid;
-}
-#lewo{
-  position: relative;
-  float: left;
-   height: 100%;
-  width: 69%;
-  border-right: 2px solid;
-}
-#prawo{
-  position: relative;
-  float: left;
-  height: 100%;
-  width: 30%;
-}
-#logo{
-  background: white;
-  padding: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Arial", serif;
-  color: black;
-  text-align: left;
-}
-
-#log{
- width: 50%;
- float: left;
- position: relative;
-}
-
-#rej{
- width: 50%;
- float: left;
- position: relative;
-}
-
-#content{
-  width: 80%;
-  position: relative;
-}
-
-#menu{
-  float: left;
-  position: relative;
-  width: 20%;
-  border-right: 2px solid;
-}
-
-#opis{
-  position: relative;
-  border-bottom: 2px solid;
-  width: 100%;
-}
+<%= options_from_collection_for_select(Pokarmy.all, :nazwa, :kalorie) %>

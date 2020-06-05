@@ -1,4 +1,6 @@
 class Eat < ApplicationRecord
   belongs_to :user
-  has_many :pokarmy
+  belongs_to :pokarmy
+  validates :ilosc, presence: true
+  validates :pokarmy_id, presence: true
 end

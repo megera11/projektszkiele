@@ -1,5 +1,5 @@
 class Pokarmy < ApplicationRecord
-  belongs_to :eat, required: false
+  has_many :eat
   before_save {self.nazwa = nazwa.downcase}
   validates :nazwa, presence: true, length: {maximum: 30}
   validates :kalorie, presence: true

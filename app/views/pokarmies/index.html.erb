@@ -3,6 +3,9 @@
   <tr>
     <th>Nazwa</th>
     <th>kalorie</th>
+    <th>białko</th>
+    <th>węglowodany</th>
+    <th>tłuszcz</th>
     <th></th>
   </tr>
 
@@ -10,7 +13,9 @@
     <tr>
       <td><%= pokarmy.nazwa %></td>
       <td><%= pokarmy.kalorie %></td>
-      <td><%= link_to 'Show', pokarmy_path(pokarmy) %></td>
+      <td><%= pokarmy.bialko %></td>
+      <td><%= pokarmy.weglowodany %></td>
+      <td><%= pokarmy.tluszcz %></td>
     </tr>
   <% end %>
 </table>

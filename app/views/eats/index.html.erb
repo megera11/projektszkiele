@@ -1,0 +1,58 @@
+<div id=lewo>
+  <h3>Historia </h3>
+  <p>Historia wybranego dnia</p>
+
+  <div class="field">
+    <b>Wybrany dzien</b><br />
+    <%= form_tag( '/eats',method: :get_dates ) do %>
+      <%= select_date Date.today, prefix: :start_date %>
+      <%= submit_tag %>
+    <% end %>
+
+  </div>
+
+  <table>
+    <tr>
+      <th>Nazwa</th>
+      <th>kalorie</th>
+      <th>białko</th>
+      <th>węglowodany</th>
+      <th>tłuszcz</th>
+      <th></th>
+    </tr>
+
+  <% @lista.each do |lista| %>
+     <tr>
+      <td><%= lista.pokarmy.nazwa %></td>
+      <td><%= lista.pokarmy.kalorie %> </td>
+      <td><%= lista.pokarmy.bialko %></td>
+      <td><%= lista.pokarmy.weglowodany %></td>
+      <td><%= lista.pokarmy.tluszcz %></td>
+     </tr>
+  <% end %>
+  </table>
+</div>
+
+<div id=prawo>
+<h3> Dodaj pokarm</h3>
+<%= @data %>
+<%= form_with scope: :eat, url: eats_path, local: true do |form| %>
+<p>
+  <%= form.label :Ilosc ,'Spożyta ilość (w 100g)' %><br>
+  <%= form.text_field :ilosc %>
+</p>
+<p>
+<%= form.label :Przedmiot %><br>
+<%= form.collection_select :pokarmy_id, Pokarmy.all, :id, :nazwa,include_blank: 'Wybierz jedzenie'%>
+</p>
+<p>
+  <%= form.submit("Zapisz") %>
+</p>
+<% if flash[:failed_eat] %>
+<div class="notice"><%= flash[:failed_eat] %></div>
+<% end %>
+<% if flash[:success_eat] %>
+<div class="notice"><%= flash[:success_eat] %></div>
+<% end %>
+<% end %>
+</div>

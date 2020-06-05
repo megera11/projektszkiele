@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'public#home', as: 'home'
 
   get 'powitanie' => 'welcome#index', as: 'powitanie'
-  get 'pokarm' => 'eat#index', as: 'pokarm'
+  get 'pokarm' => 'eats#index', as: 'pokarm'
   get 'edycja' => 'uzytkowniks#index', as: 'edycja'
   get 'rejestracja' => 'users#new', as: 'rejestracja'
   get '/rejestracja', to: 'public#home'
