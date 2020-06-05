@@ -3,13 +3,11 @@ class EatsController < ApplicationController
 
   end
 
-  def get_dates
-    @data=Date.civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i)
-  end
-
   def index
+    @date = Date.today
     @lista = Eat.where(user_id: current_user)
-  #  @data=Date.civil(params[:start_date][:year].to_i, params[:start_date][:month].to_i, params[:start_date][:day].to_i)
+    @date = params[:day]
+    #end
   end
 
   def new
@@ -30,7 +28,7 @@ class EatsController < ApplicationController
 
   private
     def eat_params
-      params.require(:eat).permit(:pokarmy_id, :user_id, :ilosc)
+      params.require(:eat).permit(:pokarmy_id, :user_id, :ilosc, :date, :day)
     end
 
 

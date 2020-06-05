@@ -4,11 +4,13 @@
 
   <div class="field">
     <b>Wybrany dzien</b><br />
-    <%= form_tag( '/eats',method: :get_dates ) do %>
-      <%= select_date Date.today, prefix: :start_date %>
+    <%= form_tag( eats_path,:method=>'get',:remote => "true", :prompt => true) do %>
+      <%= select_day (Date.today)%>
+      <% @cos=false %>
+       <% @date %>
       <%= submit_tag %>
     <% end %>
-
+  
   </div>
 
   <table>
@@ -42,7 +44,7 @@
   <%= form.text_field :ilosc %>
 </p>
 <p>
-<%= form.label :Przedmiot %><br>
+  <%= form.label :Przedmiot %><br>
 <%= form.collection_select :pokarmy_id, Pokarmy.all, :id, :nazwa,include_blank: 'Wybierz jedzenie'%>
 </p>
 <p>
