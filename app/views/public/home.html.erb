@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test1</title>
+    <title>Pokarmies</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <div id="bigdiv">
-    <div id="logo" >
-    <h1>  Pokarmies</h1>
-    </div>
-    <div id="columns" >
-      <div id="menu" >
-        <h3> Logowanie </h3>
-        <%= form_tag sessions_path, class: '' do %>
-        <%= text_field_tag(:email, nil, placeholder: 'tu wpisz login', class: '') %>
-        <%= password_field_tag(:password, nil, placeholder: 'tu wpisz hasło', class: '') %>
-        <%= submit_tag("Login", class: '') %>
-        <% end %>
-        <% if flash[:error1] %>
-        <div class="notice"><%= flash[:error1] %></div>
-        <% end %>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <div class="container-fluid vh-100">
+      <div class = "row">
+        <div class="col py-3 px-lg-3 border bg-dark border-dark m-3 text-light rounded" >
+          <h1 class="display-2">  Pokarmies</h1>
+        </div>
       </div>
-      <div id="content" >
-        <% if flash[:wylog] %>
-        <div class="notice"><%= flash[:wylog] %></div>
+      <div class = "row">
+        <% if flash[:success] %>
+        <div class="col alert alert-success py-3 px-lg-3 m-4" role=alert border border-success">
+          <%= flash[:success] %>
+        </div>
         <% end %>
         <% if flash[:success2] %>
-        <div class="notice"><%= flash[:success2] %></div>
+        <div class="col alert alert-info py-3 px-lg-3 m-4 role=alert border border-info">
+          <%= flash[:success2] %>
+        </div>
         <% end %>
-        <h3> Rejestracja </h3>
-        <%= form_for(:user, url: users_path) do |f| %>
+        <% if flash[:error] %>
+        <div class="col alert alert-danger py-3 px-lg-3 m-3 role=alert border border-danger">
+          <%= flash[:error] %>
+        </div>
+        <% end %>
+        <% if flash[:error1] %>
+        <div class="col alert alert-warning py-3 px-lg-3 m-3 role=alert border border-warning">
+          <%= flash[:error1] %>
+        </div>
+        <% end %>
+        <% if flash[:wylog] %>
+        <div class="col alert alert-warning py-3 px-lg-3 m-3 role=alert border border-warning">
+          <%= flash[:wylog] %>
+        </div>
+        <% end %>
+      </div>
+      <div class = "row">
+        <div class = "col py-3 px-lg-3 border bg-secondary border-dark m-3 text-light rounded">
+        <center><h2>Witaj sportowy świrze!</h2></center>
+        <center>Dzięki naszej stronie łatwiej osiągniesz cel kontrolując ilość spożywanych kalorii i makroskładników.<br> Dodaj swoją wagę, wzrost, rok urodzenia i wybierz płeć, a nasz system zaproponuje Ci ilość kalorii, które są twoim zerem kalorycznym. <br> Jesteś na masie? Redukcji? Możesz sam wpisać jaką ilość kalorii zamierzasz spożywać!<br> Podgląd do historii spożytych posiłków, dodawanie nowych produktów do bazy? To wszystko znajdziesz u nas! <br>Smacznego!</center>
+        </div>
+      </div>
+      <div class = "row ">
+        <div class="col py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" >
+          <h3> Logowanie </h3>
+          <%= form_tag sessions_path, class: '' do %>
           <table>
+          <tr>
+          <td>E-mail: </td>
+          <td><%= text_field_tag(:email, nil, placeholder: 'Wpisz swoj email', class: '') %></td>
+          </tr>
+          <tr>
+          <td>Haslo: </td>
+          <td><%= password_field_tag(:password, nil, placeholder: 'Wpisz swoje haslo', class: '') %></td>
+          </tr>
+          <tr>
+          <td><%= submit_tag "Zaloguj", class: "btn btn-dark" %></td>
+         
+          <% end %>
+          </tr>
+          </table>
+        </div>
+        <div class="col py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" >
+          <h3> Rejestracja </h3>
+          <%= form_for(:user, url: users_path) do |f| %>
+           <table>
             <tr>
                 <td><%= f.label :email %></td>
                 <td><%= f.email_field :email %></td>
@@ -51,23 +93,23 @@
               <td><%= f.text_field :name %></td>
             </tr>
             <tr>
-              <td></td>
-              <td><%= f.submit %></td>
+            <%= recaptcha_tags %>
             </tr>
-
-          </table>
-        <% end %>
-        <% if flash[:error] %>
-        <div class="notice"><%= flash[:error] %></div>
-        <% end %>
-        <% if flash[:success] %>
-        <div class="notice"><%= flash[:success] %></div>
-        <% end %>
+              <td></td>
+              <td><%= f.submit "Zarejestruj", class: "btn btn-dark" %></td>
+            </tr>
+            </table>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div id="stopka">
-   to stopka
-    </div>
+      <div class = "row">
+        <div class = "col py-3 px-lg-3 border bg-secondary border-dark m-3 text-light rounded">
+          <blockquote class="blockquote text-right">
+            Wykonane przez: Weronikę Żukowską, Marka Hajduczenia, Przemysława Jarockiego<br>
+            ©copyright
+          </blockquote>
+        </div>
+      </div>
     </div>
   </body>
 </html>

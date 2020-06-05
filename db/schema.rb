@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_162227) do
+ActiveRecord::Schema.define(version: 2020_06_05_163945) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_162227) do
 
   create_table "eats", force: :cascade do |t|
     t.integer "user_id"
-    t.date "data"
+    t.datetime "data"
     t.integer "pokarmy_id"
     t.integer "ilosc"
     t.datetime "created_at", precision: 6, null: false
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_162227) do
     t.decimal "tluszcz", precision: 3, scale: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["nazwa"], name: "index_pokarmies_on_nazwa", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,8 +74,8 @@ ActiveRecord::Schema.define(version: 2020_06_04_162227) do
     t.integer "kcaldospoz"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "plec"
     t.integer "rok_urodzenia"
+    t.string "plec"
     t.integer "prop_kcal"
   end
 

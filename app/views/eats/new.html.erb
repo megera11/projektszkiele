@@ -1,13 +1,13 @@
 <%= form_with scope: :eat, url: eats_path, local: true do |form| %>
-<p>
-  <%= form.label :Ilosc %><br>
-  <%= form.text_field :ilosc %>
-</p>
-<p>
-<%= form.label :Przedmiot %><br>
-<%= form.collection_select :pokarmy_id, Pokarmy.all, :id, :nazwa%>
-</p>
-<p>
-  <%= form.submit %>
-</p>
-<% end %>
+    <p>
+      <%= form.label :Ilosc %><br>
+      <%= form.text_field :ilosc %>
+    </p>
+    <p>
+    <%= form.label :Przedmiot %><br>
+    <%= form.collection_select :pokarmy_id, Pokarmy.all, :id, :nazwa%>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+    <% end %>

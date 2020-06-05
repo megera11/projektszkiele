@@ -15,17 +15,12 @@ class PokarmiesController < ApplicationController
   def create
     @pokarmy = Pokarmy.new(params[:pokarmy].permit(:nazwa, :kalorie, :bialko, :weglowodany, :tluszcz))
     if @pokarmy.save
-      flash[:success] = "Registration successful."
+      flash[:success] = "Dodales nowy pokarm!"
       redirect_to spispokarmow_path
     else
-      flash[:error] = "Registration failed."
+      flash[:error] = "Cos poszlo nie tak"
       render 'new'
     end
-
-
-
   end
-
-
 
 end

@@ -6,12 +6,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      @uzytkownik = Uzytkownik.create(user: @user)
-      flash[:success] = "Registration successful."
-      redirect_to home_path
+    if verify_recaptcha
+      if @user.save 
+        @uzytkownik = Uzytkownik.create(user: @user)
+        flash[:success] = "Zarejestrowales sie pomyslnie"
+        redirect_to home_path
+      end
     else
-      flash[:error] = "Registration failed."
+      flash[:error] = "Rejestracja zakonczyla sie niepowodzeniem"
       redirect_to home_path
     end
   end

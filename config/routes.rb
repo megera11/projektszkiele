@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'edycja' => 'uzytkowniks#index', as: 'edycja'
   get 'rejestracja' => 'users#new', as: 'rejestracja'
   get '/rejestracja', to: 'public#home'
+  get 'dodajpokarm' => 'pokarmies#new', as: 'dodajpokarm'
   resources :uzytkowniks
   resources :pokarmies
   resources :eats

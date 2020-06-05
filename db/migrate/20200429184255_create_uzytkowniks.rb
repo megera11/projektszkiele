@@ -6,6 +6,9 @@ class CreateUzytkowniks < ActiveRecord::Migration[6.0]
       t.decimal :waga, precision: 4, scale: 1
       t.decimal :bmi, precision: 3, scale: 1
       t.integer :kcaldospoz
+      t.string :plec
+      t.integer :rok_urodzenia
+      t.integer :prop_kcal
 
       t.timestamps
     end

@@ -1,30 +1,29 @@
+<h4>Dodaj swój pokarm do bazy</h4>
 <%= form_with scope: :pokarmy, url: pokarmies_path, local: true do |form| %>
-  <p>
-    <%= form.label :Nazwa %><br>
-    <%= form.text_field :nazwa %>
-  </p>
+  <table>
+    <tr>
+      <td><%= form.label :Nazwa, style:"width:200px"%></td>
+      <td><%= form.text_field :nazwa %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :Kalorie, style:"width:200px" %></td>
+      <td><%= form.text_field :kalorie %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :Bialko, style:"width:200px" %></td>
+      <td><%= form.text_field :bialko %></td>
+    </tr>
 
-  <p>
-    <%= form.label :Kalorie %><br>
-    <%= form.text_field :kalorie %>
-  </p>
-
-  <p>
-    <%= form.label :Bialko %><br>
-    <%= form.text_field :bialko %>
-  </p>
-
-  <p>
-    <%= form.label :Weglowodany %><br>
-    <%= form.text_field :weglowodany %>
-  </p>
-
-  <p>
-    <%= form.label :Tluszcz %><br>
-    <%= form.text_field :tluszcz %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+    <tr>
+      <td><%= form.label :Weglowodany, style:"width:200px" %></td>
+      <td><%= form.text_field :weglowodany %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :Tluszcz, style:"width:200px" %></td>
+      <td><%= form.text_field :tluszcz %></td>
+    </tr>
+    <tr>
+      <td><%= form.submit "Dodaj", class: "btn btn-dark"%></td>
+    </tr>
+  </table>
   <% end %>

@@ -2,12 +2,10 @@ class CreateEats < ActiveRecord::Migration[6.0]
   def change
     create_table :eats do |t|
       t.integer :user_id
-      t.date :data
+      t.date :datatime
       t.integer :pokarmy_id
       t.integer :ilosc
-      t.string :plec
-      t.integer :rok_urodzenia
-      t.integer :prop_kcal
+
       t.timestamps
     end
   end

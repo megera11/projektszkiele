@@ -1,28 +1,30 @@
-
+<h4>Edytuj swoje dane:</h4>
 <%= form_for @uzytkownik , url: uzytkownik_path do |f| %>
-
-
 <table>
   <tr>
-      <td><%= f.label :Wzrost %></td>
+      <td><%= f.label :Wzrost, style:"width:200px"%></td>
       <td><%= f.text_field :wzrost %></td>
   </tr>
   <tr>
-    <td><%= f.label :Waga %></td>
+    <td><%= f.label :Waga, style:"width:200px" %></td>
     <td><%= f.text_field :waga %></td>
   </tr>
   <tr>
-    <td><%= f.label :Kcal%></td>
+    <td><%= f.label :Kcal, style:"width:200px"%></td>
     <td><%= f.text_field :kcaldospoz %></td>
   </tr>
   <tr>
-    <td><%= f.label :Rok%></td>
+    <td><%= f.label :Rok, style:"width:200px"%></td>
     <td><%= f.text_field :rok_urodzenia %></td>
   </tr>
   <tr>
+    <td><%= f.label :Plec, style:"width:200px" %></td>
+    <td><%= f.radio_button :plec, "k" %>Kobieta</td>
+    <td><%= f.radio_button :plec, "m" %>Mezczyzna</td>
+  </tr>
+  <tr>
     <td></td>
-    <td><%= f.submit("Zapisz") %></td>
+    <td><%= f.submit "Zapisz", class: "btn btn-dark" %></td>
   </tr>
 </table>
-
 <% end %>

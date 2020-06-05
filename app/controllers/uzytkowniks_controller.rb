@@ -1,13 +1,8 @@
 class UzytkowniksController < ApplicationController
   before_action :authorize
-  helper_method :k
+
   def index
     @uzytkownik = Uzytkownik.find_by(user_id: current_user)
-  #  @prop_kcal = Uzytkownik.k(params[:plec])
-  end
-
-  def prop
-
   end
 
   def show
