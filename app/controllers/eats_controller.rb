@@ -4,9 +4,10 @@ class EatsController < ApplicationController
   end
 
   def index
-    @date = Date.today
+    @cos= true
     @lista = Eat.where(user_id: current_user)
-    @date = params[:day]
+    #if @cos==false
+    @data=params[:date][:day]
     #end
   end
 
