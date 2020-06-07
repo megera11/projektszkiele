@@ -53,9 +53,9 @@
                   <center>
                      <h2>Witaj sportowy świrze!</h2>
                   </center>
-                  <center>Dzięki naszej stronie łatwiej osiągniesz cel kontrolując ilość spożywanych kalorii i makroskładników.<br> 
+                  <center>Dzięki naszej stronie łatwiej osiągniesz cel kontrolując ilość spożywanych kalorii i makroskładników.<br>
                           Dodaj swoją wagę, wzrost, rok urodzenia i wybierz płeć, a nasz system zaproponuje Ci ilość kalorii, które są twoim zerem kalorycznym. <br>
-                          Jesteś na masie? Redukcji? Możesz sam wpisać jaką ilość kalorii zamierzasz spożywać!<br> 
+                          Jesteś na masie? Redukcji? Możesz sam wpisać jaką ilość kalorii zamierzasz spożywać!<br>
                           Podgląd do historii spożytych posiłków, dodawanie nowych produktów do bazy? To wszystko znajdziesz u nas! <br>
                           Smacznego!
                   </center>
@@ -87,19 +87,19 @@
             <%= form_for(:user, url: users_path) do |f| %>
               <table>
                 <tr>
-                  <td><%= f.label :email %></td>
+                  <td><%= f.label :email, "E-mail" %></td>
                   <td><%= f.email_field :email %></td>
                 </tr>
                 <tr>
-                  <td><%= f.label :password %></td>
+                  <td><%= f.label :password ,"Hasło" %></td>
                   <td><%= f.password_field :password %></td>
                 </tr>
                 <tr>
-                  <td><%= f.label :password_confirmation, "Repeat password" %></td>
+                  <td><%= f.label :password_confirmation, "Powtórz hasło" %></td>
                   <td><%= f.password_field :password_confirmation %></td>
                 </tr>
                 <tr>
-                  <td><%= f.label :name %></td>
+                  <td><%= f.label :name ,"Nazwa"%></td>
                   <td><%= f.text_field :name %></td>
                 </tr>
                 <tr>

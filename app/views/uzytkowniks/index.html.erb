@@ -3,11 +3,11 @@
     <div class = "col-md-6">
         <h4>Twoje dane: </h4>
         <p><i style = "font-size: 12px">(Zalecamy aby na bieżąco aktualizować dane)</i></p>
-        <p><label style="width:450px;">Wzrost<i>(cm)</i>: </label><% if @uzytkownik.rok_urodzenia != 1 %><%= @uzytkownik.wzrost %></p><% end %>
-        <p><label style="width:450px;">Waga<i>(kg)</i>: </label><% if @uzytkownik.rok_urodzenia != 1 %><%= @uzytkownik.waga %></p><% end %>
-        <p><label style="width:450px;">BMI: </label><% if @uzytkownik.rok_urodzenia != 1 %><%= @uzytkownik.bmi %></p><% end %>
-        <p><label style="width:450px;">Proponowana wartość kcal do spożycia: </label><% if @uzytkownik.rok_urodzenia != 1 %><%= @uzytkownik.prop_kcal %></p><% end %>
-        <p><label style="width:450px;">Wiek: </label><% if @uzytkownik.rok_urodzenia != 1 %><%= 2020-@uzytkownik.rok_urodzenia %><% end %>
+        <p><label style="width:450px;">Wzrost<i>(cm)</i>: </label><% if @uzytkownik.bmi < 100 %><%= @uzytkownik.wzrost %></p><% end %>
+        <p><label style="width:450px;">Waga<i>(kg)</i>: </label><% if @uzytkownik.bmi < 100 %><%= @uzytkownik.waga %></p><% end %>
+        <p><label style="width:450px;">BMI: </label><% if @uzytkownik.bmi < 100 %><%= @uzytkownik.bmi %></p><% end %>
+        <p><label style="width:450px;">Proponowana wartość kcal do spożycia: </label><% if @uzytkownik.bmi < 100 %><%= @uzytkownik.prop_kcal %></p><% end %>
+        <p><label style="width:450px;">Wiek: </label><% if @uzytkownik.bmi < 100 %><%= 2020-@uzytkownik.rok_urodzenia %><% end %>
         <p><label style="width:450px;">Wartość kcal do spożycia ustawiona przez użytkownika: </label><% if @uzytkownik.kcaldospoz != nil %><%= @uzytkownik.kcaldospoz %></p><% end %>
         <p><%= link_to 'Edytuj dane', edit_uzytkownik_path(@uzytkownik), class: "btn btn-dark" %></p>
     </div>

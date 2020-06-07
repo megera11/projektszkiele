@@ -26,10 +26,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" style="font-size:20px;">
-            <%= link_to "Strona glowna", powitanie_path, class: "nav-link"  %>
+            <%= link_to "Strona główna", powitanie_path, class: "nav-link"  %>
           </li>
           <li class="nav-item" style="font-size:20px;">
-            <%= link_to "Zarzadznie kontem", edycja_path, class: "nav-link" %>
+            <%= link_to "Zarządzanie kontem", edycja_path, class: "nav-link" %>
           </li>
           <li class="nav-item" style="font-size:20px;">
             <%= link_to "Historia", pokarm_path, class: "nav-link" %>
@@ -44,6 +44,36 @@
       </div>
     </nav>
     <div class = "row">
+      <% if flash[:success_edit] %>
+        <div class="col alert alert-success py-3 px-lg-3 m-4 role=alert border border-success">
+          <%= flash[:success_edit] %>
+        </div>
+      <% end %>
+      <% if flash[:error_edit] %>
+        <div class="col alert alert-danger py-3 px-lg-3 m-4 role=alert border border-danger">
+          <%= flash[:error_edit] %>
+        </div>
+      <% end %>
+      <% if flash[:success_eat] %>
+        <div class="col alert alert-success py-3 px-lg-3 m-4 role=alert border border-success">
+          <%= flash[:success_eat] %>
+        </div>
+      <% end %>
+      <% if flash[:failed_eat] %>
+        <div class="col alert alert-danger py-3 px-lg-3 m-4 role=alert border border-danger">
+          <%= flash[:failed_eat] %>
+        </div>
+      <% end %>
+      <% if flash[:successpokarm] %>
+        <div class="col alert alert-success py-3 px-lg-3 m-4 role=alert border border-success">
+          <%= flash[:successpokarm] %>
+        </div>
+      <% end %>
+      <% if flash[:errorpokarm] %>
+        <div class="col alert alert-danger py-3 px-lg-3 m-4 role=alert border border-danger">
+          <%= flash[:errorpokarm] %>
+        </div>
+      <% end %>
       <% if flash[:success1] %>
         <div class="col alert alert-success py-3 px-lg-3 m-4 role=alert border border-success">
           <%= flash[:success1] %>

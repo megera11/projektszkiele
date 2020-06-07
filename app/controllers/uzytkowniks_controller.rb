@@ -29,8 +29,10 @@ class UzytkowniksController < ApplicationController
   def update
     @uzytkownik =Uzytkownik.find_by(user_id: current_user)
     if @uzytkownik.update(uzytkownik_params)
+      flash[:success_edit] = "Zaktualizowano konto"
       redirect_to edycja_path
     else
+      flash[:error_edit] = "Coś poszło nie tak"
       render 'edit'
     end
   end

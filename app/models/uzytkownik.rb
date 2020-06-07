@@ -2,6 +2,9 @@ class Uzytkownik < ApplicationRecord
   belongs_to :user, required: false
   after_initialize :init
   before_save :cos, if: :plec?
+  validates :waga, presence: true,  numericality: { greater_than: 0, less_than: 1000 }
+  validates :wzrost, presence: true,  numericality: { greater_than: 0, less_than: 300 }
+  validates :rok_urodzenia, presence: true,  numericality: { greater_than: 0, less_than: Date.today.year.to_i }
   def init
     self.waga  ||= 1
     self.wzrost ||= 1
