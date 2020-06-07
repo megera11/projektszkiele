@@ -2,24 +2,24 @@
 <%= form_with scope: :pokarmy, url: pokarmies_path, local: true do |form| %>
   <table>
     <tr>
-      <td><%= form.label :Nazwa, style:"width:200px"%></td>
+      <td><%= form.label :Nazwa, style:'width:200px'%></td>
       <td><%= form.text_field :nazwa %></td>
     </tr>
     <tr>
-      <td><%= form.label :Kalorie, style:"width:200px" %></td>
+      <td><%= form.label :Kalorie, style:'width:200px' %></td>
       <td><%= form.text_field :kalorie %></td>
     </tr>
     <tr>
-      <td><%= form.label :Bialko, style:"width:200px","Białko" %></td>
+      <td><%= form.label :Bialko, "Białko", style:"width:200px" %></td>
       <td><%= form.text_field :bialko %></td>
     </tr>
 
     <tr>
-      <td><%= form.label :Weglowodany, style:"width:200px","Węglowodany" %></td>
+      <td><%= form.label :Weglowodany, "Węglowodany",style:"width:200px" %></td>
       <td><%= form.text_field :weglowodany %></td>
     </tr>
     <tr>
-      <td><%= form.label :Tluszcz, style:"width:200px","Tłuszcz" %></td>
+      <td><%= form.label :Tluszcz, "Tłuszcz", style:"width:200px" %></td>
       <td><%= form.text_field :tluszcz %></td>
     </tr>
     <tr>
