@@ -5,49 +5,87 @@
     <title>Pokarmies</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/application.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <div class="container-fluid vh-100">
-    <div class = "row">
-      <div class="col py-3 px-lg-3 border bg-dark border-dark m-3 text-light rounded" >
-        <h1 class="display-2">  Pokarmies</h1>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-md navbar-dark text-light bg-dark sticky-top">
+      <a class="navbar-brand" href="#"><img src="https://i.imgur.com/8hjUdDg.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" style="font-size:20px;">
+            <%= link_to "Strona glowna", powitanie_path, class: "nav-link"  %>
+          </li>
+          <li class="nav-item" style="font-size:20px;">
+            <%= link_to "Zarzadznie kontem", edycja_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item" style="font-size:20px;">
+            <%= link_to "Historia", pokarm_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item" style="font-size:20px;">
+            <%= link_to "Dodaj nowy pokarm", spispokarmow_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item" style="font-size:20px;">
+            <%= link_to "Wyloguj", logout_sessions_path, class: "nav-link" %>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
     <div class = "row">
-        <% if flash[:success1] %>
+      <% if flash[:success1] %>
         <div class="col alert alert-success py-3 px-lg-3 m-4 role=alert border border-success">
           <%= flash[:success1] %>
         </div>
-        <% end %>
+      <% end %>
     </div>
-    <div class = "row">
-    <div class="col-2 py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" id="aside" >
-      <p><h4><center>Zalogowano jako:<br>
-      <%= current_user.name %> </center></h3></h4><br>
-      <center><p><i><%= link_to "Strona glowna", powitanie_path, class: "btn btn-dark", style: "width:200px;"  %></i></p>
-      <p><i><%= link_to "Historia", pokarm_path, class: "btn btn-dark", style: "width:200px;" %></i></p>
-      <p><i><%= link_to "Zarzadznie kontem", edycja_path, class: "btn btn-dark", style: "width:200px;" %></i></p>
-      <p><i><%= link_to "Dodaj nowy pokarm", spispokarmow_path, class: "btn btn-dark", style: "width:200px;" %></i></p>
-      <p><i><%= link_to "Wyloguj", logout_sessions_path, class: "btn btn-dark", style: "width:200px;" %></i></p></center>
-      </div>
-      <div class="col py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" style = "height:37em;" id="main">
-        <%= yield =%>
+    <div class="conatiner-fluid padding">
+      <div class="row welcome justify-content-md-center">
+        <div class="col-11 py-3 px-lg-5 border bg-secondary border-dark m-3 text-light rounded" style="min-height:31em;">
+            <%= yield =%>
+        </div>
       </div>
     </div>
-    <div class = "row">
-    <div class = "col py-3 px-lg-3 border bg-secondary border-dark m-3 text-light rounded">
-      <blockquote class="blockquote text-right">
-        Wykonane przez: Weronikę Żukowską, Marka Hajduczenia, Przemysława Jarockiego<br>
-        ©copyright
-      </blockquote>
-    </div>
-  </div>
+    <footer>
+      <div class="conatiner-fluid padding">
+        <div class="row text-center border bg-dark border-dark mt-3 text-light">
+          <div class="col-md-4">
+            <hr>
+            <p>Kontakt:</p>
+            <hr>
+            <p>555-555-555</p>
+            <p>kontakt@kontakt.pl</p>
+          </div>
+          <div class="col-md-4">
+            <hr>
+            <p>Znajdziesz nas na:</p>
+            <hr>
+            <a href="#"><i class="fab fa-facebook fa-4x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-4x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-4x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-4x"></i></a>
+          </div>
+          <div class="col-md-4 ">
+            <hr>
+            <p>Wykonali:</p>
+            <hr>
+            <p>Weronika Żukowska</p>
+            <p>Marek Hajduczenia</p>
+            <p>Przemek Jarocki</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

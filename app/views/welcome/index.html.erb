@@ -1,2 +1,14 @@
-<br><h1><center>Witaj, <%=current_user.name %>! </center></h1>
-<center><i style="font-size:20px;"><u><p>Zalecamy uzupełnić/zaktualizować swój profil na stronie: <%= link_to "Zarzadznie kontem", edycja_path, class: "text-dark" %></u></i></center></p>
+<div class="row">
+    <div class="col-md-12">
+        <br><h1><center>Witaj, <%=current_user.name %>! </center></h1>
+        <center><i style="font-size:18px;"><p>Zalecamy uzupełnić/zaktualizować swój profil na stronie: <u><%= link_to "Zarzadznie kontem", edycja_path, class: "text-dark" %></u></i></center></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <img src="https://i.imgur.com/6I8e5Jn.png" style="float:right;">
+    </div>
+    <div class="col-md-6">
+        <img src="https://i.imgur.com/iYbDa1f.png">
+    </div>
+</div>

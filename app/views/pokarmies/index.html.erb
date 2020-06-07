@@ -1,27 +1,30 @@
-<br><h4>Spis pokarmow:</h4><br>
-<div class="fixed_header">
-<table class = "table table-striped ">
-  <thead class="thead-light"> 
-    <tr>
-      <th scope="col">Nazwa</th>
-      <th scope="col">Kalorie</th>
-      <th scope="col">Bialko</th>
-      <th scope="col">Weglowodany</th>
-      <th scope="col">Tluszcz</th>
-   </tr>
-    </thead>
-    <tbody>
-    <% @pokarmies.each do |pokarmy| %>
-     <tr>
-        <th scope="col"><%= pokarmy.nazwa %></th>
-        <th scope="col"><%= pokarmy.kalorie %></th>
-        <th scope="col"><%= pokarmy.bialko %></th>
-        <th scope="col"><%= pokarmy.weglowodany %></th>
-        <th scope="col"><%= pokarmy.tluszcz %></th>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class = "row">
+  <div class = "col-md-12">
+    <h4>Spis pokarmow:</h4>
+      <div class = "fixed_header">
+        <table class = "table table-striped ">
+          <thead class="thead-light">
+            <tr>
+              <th>Nazwa</th>
+              <th>Kalorie</th>
+              <th>Bialko</th>
+              <th>Weglowodany</th>
+              <th>Tluszcz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @pokarmies.each do |pokarmy| %>
+              <tr>
+                <th><%= pokarmy.nazwa %></th>
+                <th><%= pokarmy.kalorie %></th>
+                <th><%= pokarmy.bialko %></th>
+                <th><%= pokarmy.weglowodany %></th>
+                <th><%= pokarmy.tluszcz %></th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <p><i><%= link_to "Dodaj nowy pokarm do bazy", dodajpokarm_path, class: "btn btn-dark"  %></i></p>
+    </div>
 </div>
-<br>
-<p><i><%= link_to "Dodaj nowy pokarm do bazy", dodajpokarm_path, class: "btn btn-dark"  %></i></p>

@@ -1,5 +1,6 @@
+<div class="container-fluid">
 <div class = "row">
-    <div class = "col-6">
+    <div class = "col-md-6">
         <h4>Twoje dane: </h4>
         <p><i style = "font-size: 12px">(Zalecamy aby na bieżąco aktualizować dane)</i></p>
         <p><label style="width:450px;">Wzrost<i>(cm)</i>: </label><% if @uzytkownik.rok_urodzenia != 1 %><%= @uzytkownik.wzrost %></p><% end %>
@@ -10,7 +11,8 @@
         <p><label style="width:450px;">Wartość kcal do spożycia ustawiona przez użytkownika: </label><% if @uzytkownik.kcaldospoz != nil %><%= @uzytkownik.kcaldospoz %></p><% end %>
         <p><%= link_to 'Edytuj dane', edit_uzytkownik_path(@uzytkownik), class: "btn btn-dark" %></p>
     </div>
-    <div class = "col" style="opacity:1;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Body_mass_index_chart_pl.svg/1200px-Body_mass_index_chart_pl.svg.png" alt="obrazek bmi" width ="600" heght = "600">
+    <div class = "col-md-6" style="opacity:1;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Body_mass_index_chart_pl.svg/1200px-Body_mass_index_chart_pl.svg.png" alt="obrazek bmi" width ="550" heght = "550">
     </div>
+</div>
 </div>
