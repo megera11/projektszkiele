@@ -92,7 +92,7 @@
                 </tr>
                 <tr>
                   <td><%= f.label :password ,"Hasło" %></td>
-                  <td><%= f.password_field :password %></td>
+                  <td><%= f.password_field :password , placeholder: 'Hasło musi mieć 4 znaki' %></td>
                 </tr>
                 <tr>
                   <td><%= f.label :password_confirmation, "Powtórz hasło" %></td>
@@ -100,7 +100,7 @@
                 </tr>
                 <tr>
                   <td><%= f.label :name ,"Nazwa"%></td>
-                  <td><%= f.text_field :name %></td>
+                  <td><%= f.text_field :name , placeholder: 'Nazwa musi mieć 4 znaki' %></td>
                 </tr>
                 <tr>
                   <td><%= f.submit "Zarejestruj", class: "btn btn-dark" %></td>

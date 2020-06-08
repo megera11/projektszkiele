@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
  end
 
  def authorize
-    flash[:wylog] = "Nie jestes zalogowany."
+    flash[:wylog] = "Nie jesteś zalogowany."
     redirect_to home_path unless current_user
  end
 
